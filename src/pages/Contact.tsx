@@ -7,36 +7,35 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you soon.");
+    toast.success("Повідомлення надіслано! Ми зв'яжемось з вами найближчим часом.");
     setForm({ name: "", email: "", message: "" });
   };
 
   return (
     <div className="container py-10">
       <div className="mb-10">
-        <h1 className="text-3xl font-bold text-foreground">Contact Us</h1>
+        <h1 className="text-3xl font-bold text-foreground">Контакти</h1>
         <p className="text-muted-foreground text-sm mt-1">
-          Have a question or need a consultation? We'd love to hear from you.
+          Маєте запитання або потребуєте консультації? Ми раді допомогти.
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-10 max-w-4xl">
-        {/* Contact Info */}
         <div className="space-y-6">
           <div className="flex items-start gap-4">
             <div className="bg-secondary rounded-lg p-3">
               <Phone className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground">Phone</h3>
+              <h3 className="font-semibold text-foreground">Телефон</h3>
               <a
-                href="tel:+18005559876"
+                href="tel:+380441234567"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                +1 (800) 555-9876
+                +38 (044) 123-45-67
               </a>
               <p className="text-xs text-muted-foreground mt-1">
-                Mon–Fri, 9:00 AM – 6:00 PM
+                Пн–Пт, 9:00 – 18:00
               </p>
             </div>
           </div>
@@ -46,12 +45,12 @@ const Contact = () => {
               <Mail className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground">Email</h3>
+              <h3 className="font-semibold text-foreground">Електронна пошта</h3>
               <a
-                href="mailto:hello@supplynest.com"
+                href="mailto:info@officebaza.ua"
                 className="text-sm text-muted-foreground hover:text-primary transition-colors"
               >
-                hello@supplynest.com
+                info@officebaza.ua
               </a>
             </div>
           </div>
@@ -61,22 +60,21 @@ const Contact = () => {
               <MapPin className="h-5 w-5 text-primary" />
             </div>
             <div>
-              <h3 className="font-semibold text-foreground">Address</h3>
+              <h3 className="font-semibold text-foreground">Адреса</h3>
               <p className="text-sm text-muted-foreground">
-                123 Supply Street, Suite 200
+                вул. Хрещатик, 22, оф. 305
                 <br />
-                Commerce City, CA 90210
+                м. Київ, 01001
               </p>
             </div>
           </div>
         </div>
 
-        {/* Form */}
         <form onSubmit={handleSubmit} className="bg-card border rounded-xl p-6 space-y-4">
-          <h3 className="font-semibold text-foreground mb-2">Send us a message</h3>
+          <h3 className="font-semibold text-foreground mb-2">Надішліть нам повідомлення</h3>
           <div>
             <label className="text-sm font-medium text-foreground mb-1 block">
-              Name
+              Ім'я
             </label>
             <input
               required
@@ -84,12 +82,12 @@ const Contact = () => {
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               className="w-full bg-background border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary outline-none"
-              placeholder="Your name"
+              placeholder="Ваше ім'я"
             />
           </div>
           <div>
             <label className="text-sm font-medium text-foreground mb-1 block">
-              Email
+              Електронна пошта
             </label>
             <input
               required
@@ -98,12 +96,12 @@ const Contact = () => {
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               className="w-full bg-background border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary outline-none"
-              placeholder="your@email.com"
+              placeholder="ваша@пошта.com"
             />
           </div>
           <div>
             <label className="text-sm font-medium text-foreground mb-1 block">
-              Message
+              Повідомлення
             </label>
             <textarea
               required
@@ -112,7 +110,7 @@ const Contact = () => {
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               className="w-full bg-background border rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-primary outline-none resize-none"
-              placeholder="How can we help?"
+              placeholder="Чим ми можемо допомогти?"
             />
           </div>
           <button
@@ -120,7 +118,7 @@ const Contact = () => {
             className="w-full bg-primary text-primary-foreground py-3 rounded-lg font-semibold flex items-center justify-center gap-2 hover:opacity-90 transition-opacity"
           >
             <Send className="h-4 w-4" />
-            Send Message
+            Надіслати
           </button>
         </form>
       </div>
