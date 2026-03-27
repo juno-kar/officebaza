@@ -5,11 +5,11 @@ import PromoBanner from "./PromoBanner";
 import { useCart } from "@/hooks/useCart";
 
 const navLinks = [
-  { to: "/", label: "Home" },
-  { to: "/catalogue", label: "Catalogue" },
-  { to: "/blog", label: "Blog" },
-  { to: "/about", label: "About Us" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Головна" },
+  { to: "/catalogue", label: "Каталог" },
+  { to: "/blog", label: "Блог" },
+  { to: "/about", label: "Про нас" },
+  { to: "/contact", label: "Контакти" },
 ];
 
 const Layout = ({ children }: { children: ReactNode }) => {
@@ -33,14 +33,12 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <div className="min-h-screen flex flex-col">
       <PromoBanner />
 
-      {/* Header */}
       <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b">
         <div className="container flex items-center justify-between py-4">
           <Link to="/" className="text-xl font-bold text-primary tracking-tight">
-            SupplyNest
+            OfficeBaza
           </Link>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
               <Link
@@ -61,7 +59,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
             <Link
               to="/catalogue"
               className="relative p-2 rounded-lg hover:bg-secondary transition-colors"
-              aria-label="Cart"
+              aria-label="Кошик"
             >
               <ShoppingCart className="h-5 w-5 text-foreground" />
               {cartCount > 0 && (
@@ -74,14 +72,13 @@ const Layout = ({ children }: { children: ReactNode }) => {
             <button
               className="md:hidden p-2"
               onClick={() => setMobileOpen(!mobileOpen)}
-              aria-label="Toggle menu"
+              aria-label="Меню"
             >
               {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Nav */}
         {mobileOpen && (
           <nav className="md:hidden border-t bg-card px-6 py-4 space-y-3">
             {navLinks.map((link) => (
@@ -102,29 +99,26 @@ const Layout = ({ children }: { children: ReactNode }) => {
         )}
       </header>
 
-      {/* Main Content */}
       <main className="flex-1">{children}</main>
 
-      {/* Newsletter + Footer */}
       <footer className="bg-primary text-primary-foreground">
         <div className="container py-12">
-          {/* Newsletter */}
           <div className="max-w-lg mx-auto text-center mb-10">
             <div className="flex items-center justify-center gap-2 mb-3">
               <Mail className="h-5 w-5 text-accent" />
-              <h3 className="text-lg font-semibold">Join Our Newsletter</h3>
+              <h3 className="text-lg font-semibold">Підпишіться на розсилку</h3>
             </div>
             <p className="text-sm opacity-80 mb-4">
-              Get exclusive deals, new product alerts & handy tips delivered to your inbox.
+              Отримуйте ексклюзивні знижки, сповіщення про новинки та корисні поради на вашу пошту.
             </p>
             {subscribed ? (
-              <p className="text-accent font-medium">✓ Thank you for subscribing!</p>
+              <p className="text-accent font-medium">✓ Дякуємо за підписку!</p>
             ) : (
               <form onSubmit={handleSubscribe} className="flex gap-2">
                 <input
                   type="email"
                   required
-                  placeholder="your@email.com"
+                  placeholder="ваша@пошта.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="flex-1 rounded-lg px-4 py-2.5 text-sm text-foreground bg-card border-0 focus:ring-2 focus:ring-accent outline-none"
@@ -133,14 +127,14 @@ const Layout = ({ children }: { children: ReactNode }) => {
                   type="submit"
                   className="bg-accent text-accent-foreground px-5 py-2.5 rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity"
                 >
-                  Subscribe
+                  Підписатись
                 </button>
               </form>
             )}
           </div>
 
           <div className="border-t border-primary-foreground/20 pt-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm opacity-70">
-            <p>© 2026 SupplyNest. All rights reserved.</p>
+            <p>© 2026 OfficeBaza. Всі права захищені.</p>
             <div className="flex gap-6">
               {navLinks.map((link) => (
                 <Link

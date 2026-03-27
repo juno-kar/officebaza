@@ -7,18 +7,18 @@ import { products } from "@/data/products";
 const featuredProducts = products.filter((p) => p.badge);
 
 const perks = [
-  { icon: Truck, title: "Free Shipping", desc: "On orders over $50" },
-  { icon: Shield, title: "Quality Guarantee", desc: "Trusted brands only" },
-  { icon: Tag, title: "Best Prices", desc: "Price-match promise" },
-  { icon: Star, title: "Loyalty Rewards", desc: "Earn points every purchase" },
+  { icon: Truck, title: "Безкоштовна доставка", desc: "При замовленні від 1500 ₴" },
+  { icon: Shield, title: "Гарантія якості", desc: "Тільки перевірені бренди" },
+  { icon: Tag, title: "Найкращі ціни", desc: "Гарантія найнижчої ціни" },
+  { icon: Star, title: "Бонуси лояльності", desc: "Бали за кожну покупку" },
 ];
 
 const categoryCards = [
-  { name: "Stationery", emoji: "✏️", color: "bg-secondary" },
-  { name: "Paper Products", emoji: "📄", color: "bg-secondary" },
-  { name: "Household Goods", emoji: "🏠", color: "bg-secondary" },
-  { name: "School Supplies", emoji: "🎒", color: "bg-secondary" },
-  { name: "Creativity", emoji: "🎨", color: "bg-secondary" },
+  { name: "Канцелярія", emoji: "✏️", color: "bg-secondary" },
+  { name: "Паперова продукція", emoji: "📄", color: "bg-secondary" },
+  { name: "Товари для дому", emoji: "🏠", color: "bg-secondary" },
+  { name: "Шкільне приладдя", emoji: "🎒", color: "bg-secondary" },
+  { name: "Творчість", emoji: "🎨", color: "bg-secondary" },
 ];
 
 const Index = () => {
@@ -29,7 +29,7 @@ const Index = () => {
         <div className="absolute inset-0">
           <img
             src={heroImage}
-            alt="Premium office supplies flat lay"
+            alt="Преміум канцелярське приладдя"
             className="w-full h-full object-cover"
             width={1920}
             height={800}
@@ -39,23 +39,23 @@ const Index = () => {
         <div className="relative container py-24 md:py-36">
           <div className="max-w-xl">
             <h1 className="text-4xl md:text-5xl font-bold text-card mb-4 leading-tight">
-              Everything for Your Desk, Classroom & Home
+              Все для офісу, класу та дому
             </h1>
             <p className="text-lg text-card/80 mb-8">
-              Premium stationery, paper products, and household supplies — all in one place. Quality you can trust, prices you'll love.
+              Преміум канцелярія, паперова продукція та товари для дому — все в одному місці. Якість, якій довіряють, ціни, які радують.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
                 to="/catalogue"
                 className="bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
               >
-                Shop Now <ArrowRight className="h-4 w-4" />
+                До каталогу <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 to="/about"
                 className="bg-card/20 text-card border border-card/30 px-6 py-3 rounded-lg font-semibold hover:bg-card/30 transition-colors"
               >
-                About Us
+                Про нас
               </Link>
             </div>
           </div>
@@ -82,7 +82,7 @@ const Index = () => {
       {/* Categories */}
       <section className="container py-16">
         <h2 className="text-2xl font-bold text-foreground mb-8 text-center">
-          Shop by Category
+          Каталог за категоріями
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
           {categoryCards.map((cat) => (
@@ -104,12 +104,12 @@ const Index = () => {
       <section className="bg-card border-y">
         <div className="container py-16">
           <div className="flex items-center justify-between mb-8">
-            <h2 className="text-2xl font-bold text-foreground">Best Offers</h2>
+            <h2 className="text-2xl font-bold text-foreground">Найкращі пропозиції</h2>
             <Link
               to="/catalogue"
               className="text-sm font-medium text-primary hover:underline inline-flex items-center gap-1"
             >
-              View all <ArrowRight className="h-3.5 w-3.5" />
+              Переглянути всі <ArrowRight className="h-3.5 w-3.5" />
             </Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -123,16 +123,16 @@ const Index = () => {
       {/* CTA */}
       <section className="container py-16 text-center">
         <h2 className="text-2xl font-bold text-foreground mb-3">
-          Need Supplies in Bulk?
+          Потрібні товари оптом?
         </h2>
         <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-          We offer special pricing for businesses, schools, and organizations. Get in touch for a custom quote.
+          Ми пропонуємо спеціальні ціни для бізнесу, шкіл та організацій. Зв'яжіться з нами для індивідуальної пропозиції.
         </p>
         <Link
           to="/about"
           className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
         >
-          Partner with Us <ArrowRight className="h-4 w-4" />
+          Стати партнером <ArrowRight className="h-4 w-4" />
         </Link>
       </section>
     </div>

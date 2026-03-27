@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
 import { Clock, ArrowRight } from "lucide-react";
 
@@ -5,17 +6,18 @@ const Blog = () => {
   return (
     <div className="container py-10">
       <div className="mb-10">
-        <h1 className="text-3xl font-bold text-foreground">Blog</h1>
+        <h1 className="text-3xl font-bold text-foreground">Блог</h1>
         <p className="text-muted-foreground text-sm mt-1">
-          Guides, life hacks, and tips to get the most from your supplies
+          Гіди, лайфхаки та поради для максимальної користі від ваших товарів
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogPosts.map((post) => (
-          <article
+          <Link
             key={post.id}
-            className="bg-card rounded-xl border overflow-hidden hover:shadow-lg transition-shadow group"
+            to={`/blog/${post.id}`}
+            className="bg-card rounded-xl border overflow-hidden hover:shadow-lg transition-shadow group block"
           >
             <div className="h-40 bg-secondary flex items-center justify-center text-5xl">
               {post.image}
@@ -39,11 +41,11 @@ const Blog = () => {
               <div className="flex items-center justify-between">
                 <span className="text-xs text-muted-foreground">{post.date}</span>
                 <span className="text-xs font-semibold text-primary flex items-center gap-1 group-hover:underline">
-                  Read more <ArrowRight className="h-3 w-3" />
+                  Читати далі <ArrowRight className="h-3 w-3" />
                 </span>
               </div>
             </div>
-          </article>
+          </Link>
         ))}
       </div>
     </div>
