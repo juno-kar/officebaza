@@ -92,7 +92,7 @@ const Contact = () => {
       </div>
 
       <div className="container py-10">
-        <div className="grid md:grid-cols-2 gap-10 max-w-4xl">
+        <div className="grid md:grid-cols-3 gap-10">
           {/* Contact Cards */}
           <div className="space-y-4">
             {contactCards.map((card, i) => (
