@@ -123,7 +123,7 @@ const About = () => {
           </div>
 
         {/* Partnership */}
-        <div className="max-w-2xl">
+        <div className="max-w-2xl mx-auto mt-10">
           <h2 className="text-2xl font-bold text-foreground mb-2">Станьте партнером</h2>
           <p className="text-muted-foreground text-sm mb-6">
             Цікавлять оптові замовлення, брендування або партнерство як постачальник? Заповніть форму
