@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Building2, Users, Heart, Send, Award, TrendingUp, ShieldCheck, Truck } from "lucide-react";
+import aboutImg from "@/assets/about-office.jpg";
 import { toast } from "sonner";
 
 const stats = [
@@ -78,18 +79,24 @@ const About = () => {
 
       <div className="container py-10">
         {/* Story */}
-        <div className="max-w-3xl mb-14 animate-fade-in">
-          <p className="text-muted-foreground leading-relaxed mb-4">
-            Заснована у 2018 році, OfficeBaza розпочала з простої місії: зробити якісну канцелярію
-            та товари для творчості доступними для кожного — не лише для корпоративних покупців. Чи ви
-            батько, що готується до навчального року, фрілансер, що облаштовує робоче місце, чи
-            компанія, що забезпечує цілу команду — ми подбаємо про вас.
-          </p>
-          <p className="text-muted-foreground leading-relaxed mb-8">
-            Ми ретельно обираємо продукцію від перевірених брендів та нових виробників, гарантуючи,
-            що кожен товар відповідає нашим стандартам якості, цінності та екологічності. Швидка доставка,
-            чесні ціни та команда, якій не байдуже — ми будуємо магазин нового типу.
-          </p>
+        <div className="grid md:grid-cols-2 gap-10 items-center mb-14 animate-fade-in">
+          <div>
+            <p className="text-muted-foreground leading-relaxed mb-4">
+              Заснована у 2018 році, OfficeBaza розпочала з простої місії: зробити якісну канцелярію
+              та товари для творчості доступними для кожного — не лише для корпоративних покупців. Чи ви
+              батько, що готується до навчального року, фрілансер, що облаштовує робоче місце, чи
+              компанія, що забезпечує цілу команду — ми подбаємо про вас.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Ми ретельно обираємо продукцію від перевірених брендів та нових виробників, гарантуючи,
+              що кожен товар відповідає нашим стандартам якості, цінності та екологічності. Швидка доставка,
+              чесні ціни та команда, якій не байдуже — ми будуємо магазин нового типу.
+            </p>
+          </div>
+          <div className="rounded-xl overflow-hidden shadow-lg border">
+            <img src={aboutImg} alt="Канцелярське приладдя OfficeBaza" width={640} height={512} loading="lazy" className="w-full h-full object-cover" />
+          </div>
+        </div>
 
           {/* Stats */}
           <div className="grid sm:grid-cols-3 gap-6">
@@ -114,7 +121,6 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
 
         {/* Partnership */}
         <div className="max-w-2xl">

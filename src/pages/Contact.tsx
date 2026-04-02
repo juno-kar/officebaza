@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Clock, MessageCircle, Headphones } from "lucide-react";
+import contactImg from "@/assets/contact-team.jpg";
 import { toast } from "sonner";
 
 const Contact = () => {
@@ -91,7 +92,7 @@ const Contact = () => {
       </div>
 
       <div className="container py-10">
-        <div className="grid md:grid-cols-2 gap-10 max-w-4xl">
+        <div className="grid md:grid-cols-3 gap-10">
           {/* Contact Cards */}
           <div className="space-y-4">
             {contactCards.map((card, i) => (
@@ -160,6 +161,11 @@ const Contact = () => {
               Надіслати
             </button>
           </form>
+
+          {/* Image */}
+          <div className="hidden md:block rounded-xl overflow-hidden shadow-lg border">
+            <img src={contactImg} alt="Команда підтримки OfficeBaza" width={640} height={512} loading="lazy" className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
     </div>
