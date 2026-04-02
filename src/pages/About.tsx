@@ -121,7 +121,6 @@ const About = () => {
               </div>
             ))}
           </div>
-        </div>
 
         {/* Partnership */}
         <div className="max-w-2xl">
