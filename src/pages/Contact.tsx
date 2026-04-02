@@ -161,6 +161,11 @@ const Contact = () => {
               Надіслати
             </button>
           </form>
+
+          {/* Image */}
+          <div className="hidden md:block rounded-xl overflow-hidden shadow-lg border">
+            <img src={contactImg} alt="Команда підтримки OfficeBaza" width={640} height={512} loading="lazy" className="w-full h-full object-cover" />
+          </div>
         </div>
       </div>
     </div>
