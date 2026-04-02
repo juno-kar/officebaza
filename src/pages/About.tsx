@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Building2, Users, Heart, Send, Award, TrendingUp, ShieldCheck, Truck } from "lucide-react";
+import aboutImg from "@/assets/about-office.jpg";
 import { toast } from "sonner";
 
 const stats = [

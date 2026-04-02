@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Clock, MessageCircle, Headphones } from "lucide-react";
+import contactImg from "@/assets/contact-team.jpg";
 import { toast } from "sonner";
 
 const Contact = () => {
