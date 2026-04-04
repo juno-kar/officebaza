@@ -20,6 +20,18 @@ const About = () => {
   const [form, setForm] = useState({ company: "", contact: "", email: "", message: "" });
   const [hoveredStat, setHoveredStat] = useState<number | null>(null);
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
+  const [formVisible, setFormVisible] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setFormVisible(true); },
+      { threshold: 0.15 }
+    );
+    if (formRef.current) observer.observe(formRef.current);
+    return () => observer.disconnect();
+  }, []);
+  const [hoveredValue, setHoveredValue] = useState<number | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
