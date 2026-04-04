@@ -14,7 +14,7 @@ const weeklyDiscount = 25; // %
 const weeklyOldPrice = weeklyProduct.price;
 const weeklyNewPrice = Math.round(weeklyOldPrice * (1 - weeklyDiscount / 100));
 const weeklyRating = 4.8;
-const weeklyReviews = 124;
+const weeklyReviews = 126;
 
 const perks = [
   { icon: Truck, title: "Безкоштовна доставка", desc: "При замовленні від 1500 ₴" },
