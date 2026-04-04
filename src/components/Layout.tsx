@@ -33,7 +33,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
     <div className="min-h-screen flex flex-col">
       <PromoBanner />
 
-      <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b">
+      <header className="sticky top-0 z-50 bg-card/95 backdrop-blur-sm border-b" style={{ top: 'var(--promo-height, 0px)' }}>
         <div className="container flex items-center justify-between py-4">
           <Link to="/" className="text-xl font-bold text-primary tracking-tight">
             OfficeBaza

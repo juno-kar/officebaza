@@ -7,7 +7,7 @@ const PromoBanner = () => {
   if (!visible) return null;
 
   return (
-    <div className="bg-primary text-primary-foreground relative">
+    <div className="bg-primary text-primary-foreground relative sticky top-0 z-[60]">
       <div className="container flex items-center justify-center gap-2 py-2.5 text-sm font-medium">
         <Sparkles className="h-4 w-4 text-accent" />
         <span>

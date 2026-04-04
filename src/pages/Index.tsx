@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, Truck, Shield, Tag } from "lucide-react";
+import { ArrowRight, Star, Truck, Shield, Tag, Building2 } from "lucide-react";
 import heroImage from "@/assets/hero-office.jpg";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
