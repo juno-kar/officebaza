@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Building2, Users, Heart, Send, Award, TrendingUp, ShieldCheck, Truck } from "lucide-react";
 import aboutImg from "@/assets/about-office.jpg";
 import { toast } from "sonner";
@@ -20,6 +20,17 @@ const About = () => {
   const [form, setForm] = useState({ company: "", contact: "", email: "", message: "" });
   const [hoveredStat, setHoveredStat] = useState<number | null>(null);
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);
+  const [formVisible, setFormVisible] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) setFormVisible(true); },
+      { threshold: 0.15 }
+    );
+    if (formRef.current) observer.observe(formRef.current);
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -123,7 +134,12 @@ const About = () => {
           </div>
 
         {/* Partnership */}
-        <div className="max-w-2xl mx-auto mt-10">
+        <div
+          ref={formRef}
+          className={`max-w-2xl mx-auto mt-10 transition-all duration-700 ${
+            formVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+          }`}
+        >
           <h2 className="text-2xl font-bold text-foreground mb-2">Станьте партнером</h2>
           <p className="text-muted-foreground text-sm mb-6">
             Цікавлять оптові замовлення, брендування або партнерство як постачальник? Заповніть форму
