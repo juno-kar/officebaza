@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, Truck, Shield, Tag, Building2 } from "lucide-react";
+import { ArrowRight, Star, Truck, Shield, Tag, Building2, ShoppingCart, Flame } from "lucide-react";
 import heroImage from "@/assets/hero-office.jpg";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
+import { useCart } from "@/hooks/useCart";
+import { toast } from "sonner";
 
 const featuredProducts = products.filter((p) => p.badge);
+
+// "Товар тижня" — pick a specific product with a special discount
+const weeklyProduct = products.find((p) => p.id === "7")!; // Органайзер настільний
+const weeklyDiscount = 25; // %
+const weeklyOldPrice = weeklyProduct.price;
+const weeklyNewPrice = Math.round(weeklyOldPrice * (1 - weeklyDiscount / 100));
+const weeklyRating = 4.8;
+const weeklyReviews = 124;
 
 const perks = [
   { icon: Truck, title: "Безкоштовна доставка", desc: "При замовленні від 1500 ₴" },
@@ -22,6 +32,13 @@ const categoryCards = [
 ];
 
 const Index = () => {
+  const { addItem } = useCart();
+
+  const handleAddWeekly = () => {
+    addItem({ ...weeklyProduct, price: weeklyNewPrice });
+    toast.success(`${weeklyProduct.name} додано до кошика зі знижкою!`);
+  };
+
   return (
     <div>
       {/* Hero */}
@@ -143,6 +160,70 @@ const Index = () => {
             >
               Стати партнером <ArrowRight className="h-4 w-4" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Product of the Week */}
+      <section className="bg-card border-b">
+        <div className="container py-16">
+          <div className="flex items-center justify-center gap-3 mb-10">
+            <Flame className="h-6 w-6 text-destructive" />
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground">Товар тижня</h2>
+            <Flame className="h-6 w-6 text-destructive" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto">
+            {/* Image */}
+            <div className="relative rounded-2xl overflow-hidden bg-secondary aspect-square">
+              <img
+                src={weeklyProduct.image}
+                alt={weeklyProduct.name}
+                className="w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-3 py-1.5 rounded-full text-sm font-bold">
+                -{weeklyDiscount}%
+              </div>
+            </div>
+            {/* Details */}
+            <div className="flex flex-col gap-4">
+              <span className="text-xs font-semibold text-primary uppercase tracking-wider">Спеціальна пропозиція</span>
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
+                {weeklyProduct.name}
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {weeklyProduct.description}
+              </p>
+              <p className="text-sm text-muted-foreground">
+                Категорія: <span className="text-foreground font-medium">{weeklyProduct.category}</span>
+              </p>
+              {/* Rating */}
+              <div className="flex items-center gap-2">
+                <div className="flex">
+                  {[1, 2, 3, 4, 5].map((s) => (
+                    <Star
+                      key={s}
+                      className={`h-5 w-5 ${s <= Math.round(weeklyRating) ? "text-accent fill-accent" : "text-muted-foreground/30"}`}
+                    />
+                  ))}
+                </div>
+                <span className="text-sm font-semibold text-foreground">{weeklyRating}</span>
+                <span className="text-xs text-muted-foreground">({weeklyReviews} відгуків)</span>
+              </div>
+              {/* Price */}
+              <div className="flex items-baseline gap-3">
+                <span className="text-3xl font-bold text-primary">{weeklyNewPrice} ₴</span>
+                <span className="text-lg text-muted-foreground line-through">{weeklyOldPrice} ₴</span>
+              </div>
+              {/* CTA */}
+              <button
+                onClick={handleAddWeekly}
+                className="bg-primary text-primary-foreground px-8 py-4 rounded-xl text-base font-bold flex items-center justify-center gap-3 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 w-full md:w-auto"
+              >
+                <ShoppingCart className="h-5 w-5" />
+                Додати в кошик
+              </button>
+            </div>
           </div>
         </div>
       </section>
