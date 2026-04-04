@@ -187,7 +187,7 @@ const Index = () => {
             </div>
             {/* Details */}
             <div className="flex flex-col gap-4">
-              <span className="text-xs font-semibold text-primary uppercase tracking-wider">Спеціальна пропозиція</span>
+              <span className="text-xs font-semibold text-primary uppercase tracking-wider">Обмежена пропозиція</span>
               <h3 className="text-2xl md:text-3xl font-bold text-foreground leading-tight">
                 {weeklyProduct.name}
               </h3>
