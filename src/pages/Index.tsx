@@ -174,7 +174,7 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto">
             {/* Image */}
-            <div className="relative rounded-2xl w-90 h-50 overflow-hidden bg-secondary" style="height: 300px">
+            <div className="relative rounded-2xl overflow-hidden bg-secondary" style={{height: 50 + 'em'}}>
               <img
                 src={weeklyProduct.image}
                 alt={weeklyProduct.name}
