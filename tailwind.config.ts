@@ -85,9 +85,15 @@ export default {
           },
         },
       },
+      "gradient-shift": {
+        "0%, 100%": { transform: "translate(0, 0) scale(1)" },
+        "33%": { transform: "translate(30px, -20px) scale(1.1)" },
+        "66%": { transform: "translate(-20px, 15px) scale(0.95)" },
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "gradient-shift": "gradient-shift 8s ease-in-out infinite",
       },
     },
   },
