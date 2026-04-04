@@ -32,6 +32,13 @@ const categoryCards = [
 ];
 
 const Index = () => {
+  const { addItem } = useCart();
+
+  const handleAddWeekly = () => {
+    addItem({ ...weeklyProduct, price: weeklyNewPrice });
+    toast.success(`${weeklyProduct.name} додано до кошика зі знижкою!`);
+  };
+
   return (
     <div>
       {/* Hero */}
