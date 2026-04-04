@@ -174,11 +174,11 @@ const Index = () => {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center max-w-4xl mx-auto">
             {/* Image */}
-            <div className="relative rounded-2xl overflow-hidden bg-secondary">
+            <div className="relative rounded-2xl h-150 overflow-hidden bg-secondary">
               <img
                 src={weeklyProduct.image}
                 alt={weeklyProduct.name}
-                className="w-full h-full object-fill"
+                className="w-full h-full object-cover"
                 loading="lazy"
               />
               <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-3 py-1.5 rounded-full text-sm font-bold">
