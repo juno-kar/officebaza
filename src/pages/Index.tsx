@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, Truck, Shield, Tag, Building2 } from "lucide-react";
+import { ArrowRight, Star, Truck, Shield, Tag, Building2, ShoppingCart, Flame } from "lucide-react";
 import heroImage from "@/assets/hero-office.jpg";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
+import { useCart } from "@/hooks/useCart";
+import { toast } from "sonner";
 
 const featuredProducts = products.filter((p) => p.badge);
+
+// "Товар тижня" — pick a specific product with a special discount
+const weeklyProduct = products.find((p) => p.id === "7")!; // Органайзер настільний
+const weeklyDiscount = 25; // %
+const weeklyOldPrice = weeklyProduct.price;
+const weeklyNewPrice = Math.round(weeklyOldPrice * (1 - weeklyDiscount / 100));
+const weeklyRating = 4.8;
+const weeklyReviews = 124;
 
 const perks = [
   { icon: Truck, title: "Безкоштовна доставка", desc: "При замовленні від 1500 ₴" },
