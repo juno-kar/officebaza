@@ -65,31 +65,6 @@ const Contact = () => {
         </div>
       </div>
 
-      {/* Quick Stats Banner */}
-      <div className="bg-secondary border-b">
-        <div className="container py-5">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {[
-              { icon: Clock, label: "Відповідь протягом 2 годин", desc: "У робочий час" },
-              { icon: Headphones, label: "Підтримка 24/7", desc: "Для корпоративних клієнтів" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="flex items-center gap-3 p-3 rounded-xl bg-card border hover:shadow-md hover:-translate-y-0.5 transition-all duration-300 cursor-default"
-              >
-                <div className="bg-primary/10 rounded-lg p-2.5 shrink-0">
-                  <item.icon className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{item.label}</p>
-                  <p className="text-xs text-muted-foreground">{item.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
       <div className="container py-10">
         <div className="grid md:grid-cols-3 gap-10">
           {/* Contact Cards */}
