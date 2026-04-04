@@ -178,7 +178,7 @@ const Index = () => {
               <img
                 src={weeklyProduct.image}
                 alt={weeklyProduct.name}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-fill"
                 loading="lazy"
               />
               <div className="absolute top-4 left-4 bg-destructive text-destructive-foreground px-3 py-1.5 rounded-full text-sm font-bold">
