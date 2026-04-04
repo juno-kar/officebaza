@@ -31,7 +31,6 @@ const About = () => {
     if (formRef.current) observer.observe(formRef.current);
     return () => observer.disconnect();
   }, []);
-  const [hoveredValue, setHoveredValue] = useState<number | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
