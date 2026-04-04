@@ -71,7 +71,6 @@ const Contact = () => {
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {[
               { icon: Clock, label: "Відповідь протягом 2 годин", desc: "У робочий час" },
-              { icon: MessageCircle, label: "Онлайн-консультація", desc: "Чат на сайті" },
               { icon: Headphones, label: "Підтримка 24/7", desc: "Для корпоративних клієнтів" },
             ].map((item, i) => (
               <div
