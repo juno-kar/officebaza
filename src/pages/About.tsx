@@ -42,7 +42,7 @@ const About = () => {
     <div>
       {/* Hero Banner */}
       <div className="bg-primary text-primary-foreground overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10">
+        <div className="absolute inset-0 opacity-15 animate-gradient-shift">
           <div className="absolute top-0 left-1/2 w-[500px] h-[500px] bg-accent rounded-full -translate-y-1/2 -translate-x-1/2 blur-3xl" />
           <div className="absolute bottom-0 right-0 w-72 h-72 bg-accent rounded-full translate-y-1/3 translate-x-1/4 blur-2xl" />
         </div>
