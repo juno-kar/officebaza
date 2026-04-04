@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, Truck, Shield, Tag } from "lucide-react";
+import { ArrowRight, Star, Truck, Shield, Tag, Building2 } from "lucide-react";
 import heroImage from "@/assets/hero-office.jpg";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
@@ -121,24 +121,29 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden bg-primary text-primary-foreground">
-        <div className="absolute inset-0 opacity-15 animate-gradient-shift">
-          <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-accent rounded-full -translate-y-1/2 blur-3xl" />
-          <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-accent rounded-full translate-y-1/3 blur-2xl" />
+      <section className="relative overflow-hidden bg-secondary border-y">
+        <div className="absolute inset-0 opacity-[0.04]">
+          <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, hsl(var(--primary)) 0%, transparent 50%), radial-gradient(circle at 80% 50%, hsl(var(--accent)) 0%, transparent 50%)' }} />
         </div>
-        <div className="container py-16 text-center relative z-10">
-          <h2 className="text-2xl md:text-3xl font-bold mb-3">
-            Потрібні товари оптом?
-          </h2>
-          <p className="opacity-85 mb-6 max-w-md mx-auto">
-            Ми пропонуємо спеціальні ціни для бізнесу, шкіл та організацій. Зв'яжіться з нами для індивідуальної пропозиції.
-          </p>
-          <Link
-            to="/about"
-            className="bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
-          >
-            Стати партнером <ArrowRight className="h-4 w-4" />
-          </Link>
+        <div className="container py-16 relative z-10">
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 bg-primary/10 text-primary px-4 py-1.5 rounded-full text-sm font-semibold mb-4">
+              <Building2 className="h-4 w-4" />
+              Для бізнесу
+            </div>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3">
+              Потрібні товари оптом?
+            </h2>
+            <p className="text-muted-foreground mb-6 max-w-md mx-auto">
+              Ми пропонуємо спеціальні ціни для бізнесу, шкіл та організацій. Зв'яжіться з нами для індивідуальної пропозиції.
+            </p>
+            <Link
+              to="/about"
+              className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:opacity-90 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+            >
+              Стати партнером <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </section>
     </div>

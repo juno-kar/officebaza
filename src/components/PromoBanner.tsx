@@ -1,13 +1,27 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { X, Sparkles } from "lucide-react";
 
 const PromoBanner = () => {
   const [visible, setVisible] = useState(true);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const update = () => {
+      const h = visible && ref.current ? ref.current.offsetHeight : 0;
+      document.documentElement.style.setProperty("--promo-height", `${h}px`);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("resize", update);
+      document.documentElement.style.setProperty("--promo-height", "0px");
+    };
+  }, [visible]);
 
   if (!visible) return null;
 
   return (
-    <div className="bg-primary text-primary-foreground relative">
+    <div ref={ref} className="bg-primary text-primary-foreground relative sticky top-0 z-[60]">
       <div className="container flex items-center justify-center gap-2 py-2.5 text-sm font-medium">
         <Sparkles className="h-4 w-4 text-accent" />
         <span>
