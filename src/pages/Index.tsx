@@ -121,19 +121,25 @@ const Index = () => {
       </section>
 
       {/* CTA */}
-      <section className="container py-16 text-center">
-        <h2 className="text-2xl font-bold text-foreground mb-3">
-          Потрібні товари оптом?
-        </h2>
-        <p className="text-muted-foreground mb-6 max-w-md mx-auto">
-          Ми пропонуємо спеціальні ціни для бізнесу, шкіл та організацій. Зв'яжіться з нами для індивідуальної пропозиції.
-        </p>
-        <Link
-          to="/about"
-          className="bg-primary text-primary-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
-        >
-          Стати партнером <ArrowRight className="h-4 w-4" />
-        </Link>
+      <section className="relative overflow-hidden bg-primary text-primary-foreground">
+        <div className="absolute inset-0 opacity-15 animate-gradient-shift">
+          <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-accent rounded-full -translate-y-1/2 blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 w-[300px] h-[300px] bg-accent rounded-full translate-y-1/3 blur-2xl" />
+        </div>
+        <div className="container py-16 text-center relative z-10">
+          <h2 className="text-2xl md:text-3xl font-bold mb-3">
+            Потрібні товари оптом?
+          </h2>
+          <p className="opacity-85 mb-6 max-w-md mx-auto">
+            Ми пропонуємо спеціальні ціни для бізнесу, шкіл та організацій. Зв'яжіться з нами для індивідуальної пропозиції.
+          </p>
+          <Link
+            to="/about"
+            className="bg-accent text-accent-foreground px-6 py-3 rounded-lg font-semibold inline-flex items-center gap-2 hover:opacity-90 transition-opacity"
+          >
+            Стати партнером <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
       </section>
     </div>
   );
