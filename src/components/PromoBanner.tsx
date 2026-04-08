@@ -21,7 +21,7 @@ const PromoBanner = () => {
   if (!visible) return null;
 
   return (
-    <div ref={ref} className="relative sticky top-0 z-[60] text-white" style={{ background: 'linear-gradient(90deg, hsl(160 50% 35%), hsl(30 90% 55%), hsl(350 80% 58%))' }}>
+    <div ref={ref} className="relative sticky top-0 z-[60] text-white transition-all duration-700 ease-in-out [background-size:200%_200%] [background-position:0%_50%] hover:[background-position:100%_50%]" style={{ backgroundImage: 'linear-gradient(90deg, hsl(160 50% 35%), hsl(30 90% 55%), hsl(350 80% 58%), hsl(160 50% 35%))' }}>
       <div className="container flex items-center justify-center gap-2 py-2.5 text-sm font-medium">
         <Sparkles className="h-4 w-4 text-accent" />
         <span>
