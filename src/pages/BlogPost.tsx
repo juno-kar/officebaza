@@ -6,6 +6,7 @@ import { ArrowLeft, Clock, Calendar } from "lucide-react";
 const BlogPost = () => {
   const { id } = useParams();
   const post = blogPosts.find((p) => p.id === id);
+  usePageTitle(post ? post.title : "Статтю не знайдено");
 
   if (!post) {
     return (
