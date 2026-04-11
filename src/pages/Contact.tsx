@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Clock, MessageCircle, Headphones } from "lucide-react";
+import usePageTitle from "@/hooks/usePageTitle";
 import contactImg from "@/assets/contact-team.jpg";
 import { toast } from "sonner";
 
 const Contact = () => {
+  usePageTitle("Контакти");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [activeCard, setActiveCard] = useState<number | null>(null);
 

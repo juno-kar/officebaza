@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, Truck, Shield, Tag, Building2, ShoppingCart, Flame } from "lucide-react";
+import usePageTitle from "@/hooks/usePageTitle";
 import heroImage from "@/assets/hero-office.jpg";
 import ProductCard from "@/components/ProductCard";
 import { products } from "@/data/products";
@@ -32,6 +33,7 @@ const categoryCards = [
 ];
 
 const Index = () => {
+  usePageTitle("Головна — все для офісу, школи та дому");
   const { addItem } = useCart();
 
   const handleAddWeekly = () => {
