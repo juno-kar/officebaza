@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useSearchParams } from "react-router-dom";
+import usePageTitle from "@/hooks/usePageTitle";
 import ProductCard from "@/components/ProductCard";
 import { products, categories, type Category } from "@/data/products";
 import { useCart } from "@/hooks/useCart";

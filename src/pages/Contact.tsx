@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Phone, Mail, MapPin, Send, Clock, MessageCircle, Headphones } from "lucide-react";
+import usePageTitle from "@/hooks/usePageTitle";
 import contactImg from "@/assets/contact-team.jpg";
 import { toast } from "sonner";
 

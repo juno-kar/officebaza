@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { blogPosts } from "@/data/blogPosts";
+import usePageTitle from "@/hooks/usePageTitle";
 import { Clock, ArrowRight } from "lucide-react";
 
 const Blog = () => {

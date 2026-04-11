@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Building2, Users, Heart, Send, Award, TrendingUp, ShieldCheck, Truck } from "lucide-react";
+import usePageTitle from "@/hooks/usePageTitle";
 import aboutImg from "@/assets/about-office.jpg";
 import { toast } from "sonner";
 
