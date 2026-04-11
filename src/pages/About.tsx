@@ -18,6 +18,7 @@ const values = [
 ];
 
 const About = () => {
+  usePageTitle("Про нас");
   const [form, setForm] = useState({ company: "", contact: "", email: "", message: "" });
   const [hoveredStat, setHoveredStat] = useState<number | null>(null);
   const [hoveredValue, setHoveredValue] = useState<number | null>(null);

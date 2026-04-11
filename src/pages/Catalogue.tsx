@@ -7,6 +7,7 @@ import { useCart } from "@/hooks/useCart";
 import { X, ShoppingCart } from "lucide-react";
 
 const Catalogue = () => {
+  usePageTitle("Каталог товарів");
   const [searchParams, setSearchParams] = useSearchParams();
   const initialCategory = (searchParams.get("category") as Category) || "Усі";
   const [activeCategory, setActiveCategory] = useState<Category>(initialCategory);

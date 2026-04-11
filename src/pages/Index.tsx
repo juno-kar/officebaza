@@ -33,6 +33,7 @@ const categoryCards = [
 ];
 
 const Index = () => {
+  usePageTitle("Головна — все для офісу, школи та дому");
   const { addItem } = useCart();
 
   const handleAddWeekly = () => {

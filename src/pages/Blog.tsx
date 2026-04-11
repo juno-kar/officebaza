@@ -4,6 +4,7 @@ import usePageTitle from "@/hooks/usePageTitle";
 import { Clock, ArrowRight } from "lucide-react";
 
 const Blog = () => {
+  usePageTitle("Блог");
   return (
     <div className="container py-10">
       <div className="mb-10">

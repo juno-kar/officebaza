@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const NotFound = () => {
+  usePageTitle("Сторінку не знайдено");
   const location = useLocation();
 
   useEffect(() => {
