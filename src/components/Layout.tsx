@@ -57,7 +57,7 @@ const Layout = ({ children }: { children: ReactNode }) => {
 
           <div className="flex items-center gap-3">
             <Link
-              to="/catalogue"
+              to="/checkout"
               className="relative p-2 rounded-lg hover:bg-secondary transition-colors"
               aria-label="Кошик"
             >
